@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Rush</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 id="gameTitle" class="neonText">Gold Rush Game</h1>
+    <h2 id="player1">Enter Players Names:</h1>
+    <div class="playerData">
+        <input id="firstPlayerName" type="text" placeholder="first player">
+    </div>
+    <div class="playerData">
+        <input id="secondPlayerName" type="text" placeholder="second player">
+    </div>
+    <button id="EnterNames" style="width:100%;">Enter Names!</button>
+    <div class="matrix"></div>
+    <div id="Players-template">
+        <h2 id="player1"></h1>
+        <h2 id="player2"></h1>
+    </div>
+    <table>
+
+        <script id="matrix-template" type="text/x-handlebars-template">
+                <tr>
+                    {{#each matrix}}
+                        <td class="cell" >{{0}}</td>
+                    {{/each}}
+                </tr>
+            </script>
+    </table>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script type="text/javascript" src="Matrix.js"></script>
+    <script type="text/javascript" src="GoldRush.js"></script>
+    <script type="text/javascript" src="Renderer.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+
+</body>
+
+</html>
