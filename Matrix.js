@@ -3,6 +3,7 @@ class Matrix {
         this.matrix = this.generateMatrix(rows, cols)
         this.rows = rows
         this.cols = cols
+        this.totalCoins = 0
     }
 
     print() {
@@ -61,11 +62,12 @@ class Matrix {
     generateMatrix(rows, cols) {
         let matrix = []
         for (let r = 0; r < rows; r++) {
-            matrix.push([]);
+            matrix.push([])
             for (let c = 0; c < cols; c++) {
-                let coinsAmount = Math.floor(Math.random() * cols)
-                if (coinsAmount === (c || r)) { matrix[r].push("C") }
-                else { matrix[r].push(".") }
+                this.totalCoins = Math.floor(Math.random() * cols)
+                if (this.totalCoins === (c || r)) {
+                    matrix[r].push("C")
+                } else { matrix[r].push(".") }
             }
         }
         return matrix

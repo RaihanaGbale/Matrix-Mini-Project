@@ -1,8 +1,8 @@
 class GoldRush extends Matrix {
     constructor() {
         super(5, 5)
-        this.player1 = { score: 0 , name:'' }
-        this.player2 = { score: 0 , name:''}
+        this.player1 = { score: 0, name: '' }
+        this.player2 = { score: 0, name: '' }
         this.alter(0, 0, 1) //put player 1 on board to start
         this.alter(this.rows - 1, this.cols - 1, 2) //put player 2 on board to start
     }
@@ -18,9 +18,18 @@ class GoldRush extends Matrix {
     addCoinToScore(player) {
         switch (player) {
             case 1:
-                this.player1.score += 10
+                {
+                    this.player1.score += 10
+                    if (this.player1.score == this.totalCoins / 2)
+                        alert("player 1 won!")
+                }
             case 2:
-                this.player2.score += 10
+                {
+                    this.player2.score += 10
+                    if (this.player2.score == this.totalCoins / 2)
+                        alert("player 2 won!")
+
+                }
             default:
                 "no such player"
         }
